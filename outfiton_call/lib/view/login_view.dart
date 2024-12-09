@@ -69,9 +69,9 @@ class LoginScreen extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
-                  child: const Text(
+                  child: Text(
                     'Forgot password',
-                    style: TextStyle(color: Colors.pink),
+                    style: TextStyle(color: Colors.pink[100] ),
                   ),
                 ),
               ),
@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                     // Add login logic here
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.pink,
+                    backgroundColor: Colors.pink[100],
                     padding: const EdgeInsets.all(15),
                   ),
                   child: const Text(
@@ -99,10 +99,10 @@ class LoginScreen extends StatelessWidget {
                 onPressed: () {
                   // Add Google login logic here
                 },
-                icon: const Icon(Icons.account_circle, color: Colors.pink),
+                icon: Icon(Icons.account_circle, color: Colors.pink[100]),
                 label: const Text('Login with Google account'),
                 style: OutlinedButton.styleFrom(
-                  foregroundColor: Colors.pink, side: const BorderSide(color: Colors.pink),
+                  foregroundColor: Colors.pink[100], side: const BorderSide(color: Colors.pink),
                   padding: const EdgeInsets.all(15),
                 ),
               ),
