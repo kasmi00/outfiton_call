@@ -1,6 +1,6 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
-import 'screen/login_screen.dart';
+import 'package:outfitoncall/view/login_view.dart';
+import 'package:outfitoncall/view/registration_view.dart';
 
 
 void main() {
@@ -13,12 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Outfit On Call',
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        fontFamily: 'GoogleFonts.openSans',
-      ),
-      home: const LoginScreen(),
+      theme: ThemeData(primarySwatch: Colors.pink),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegistrationScreen(),
+      },
     );
   }
 }
