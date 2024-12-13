@@ -1,7 +1,8 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:outfitoncall/view/login_view.dart';
 import 'package:outfitoncall/view/registration_view.dart';
-
+import 'package:outfitoncall/view/dashboard_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegistrationScreen(),
+        '/dashboard': (context) => const DashboardScreen(), // Add this route
       },
     );
   }
