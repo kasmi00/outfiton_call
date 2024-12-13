@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Outfit On Call',
-      theme: ThemeData(primarySwatch: Colors.pink),
+      theme: ThemeData(primarySwatch: Colors.brown),
       initialRoute: '/login', // App starts at login
       routes: {
         '/login': (context) => const LoginScreen(),
