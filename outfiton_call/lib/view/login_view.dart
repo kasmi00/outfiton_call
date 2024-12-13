@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:outfitoncall/view/registration_view.dart'; // Import RegistrationScreen here
-import 'package:outfitoncall/view/dashboard_view.dart';  // Import DashboardScreen here
+import 'package:outfitoncall/view/registration_view.dart'; // Registration screen import.
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -16,7 +15,7 @@ class LoginScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 80),
-              // Logo with a gradient circular background
+              // Logo with gradient circular background.
               Container(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -35,9 +34,16 @@ class LoginScreen extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.all(20),
                 child: Image.asset(
-                  'assets/logo.png', // Add your logo in the assets folder
+                  'assets/logo.png', // Path to the logo.
                   width: 80,
                   height: 80,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const Icon(
+                      Icons.error,
+                      color: Colors.red,
+                      size: 80,
+                    ); // Placeholder if the image fails to load.
+                  },
                 ),
               ),
               const SizedBox(height: 30),
@@ -154,7 +160,7 @@ class LoginScreen extends StatelessWidget {
                       // Navigate to Registration Screen
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const RegistrationScreen()), // Navigate to RegistrationScreen
+                        MaterialPageRoute(builder: (context) => const RegistrationScreen()),
                       );
                     },
                     child: Text(
