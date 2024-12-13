@@ -14,7 +14,6 @@ class RegistrationScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const SizedBox(height: 80),
-            // Your registration form fields go here
             const TextField(
               decoration: InputDecoration(
                 hintText: 'Enter your name',

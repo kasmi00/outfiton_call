@@ -1,4 +1,3 @@
-// lib/main.dart
 import 'package:flutter/material.dart';
 import 'package:outfitoncall/view/login_view.dart';
 import 'package:outfitoncall/view/registration_view.dart';
@@ -17,11 +16,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Outfit On Call',
       theme: ThemeData(primarySwatch: Colors.pink),
-      initialRoute: '/login',
+      initialRoute: '/login', // App starts at login
       routes: {
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegistrationScreen(),
-        '/dashboard': (context) => const DashboardScreen(), // Add this route
+        '/dashboard': (context) => const DashboardScreen(),
       },
     );
   }

@@ -62,7 +62,7 @@ class DashboardScreen extends StatelessWidget {
               ),
               const SizedBox(height: 20),
 
-              // Product List
+              // Product List (Mock Data)
               _buildProductCard(
                 imageUrl: 'assets/lehenga.png',
                 title: 'Lehenga',
@@ -179,7 +179,6 @@ class DashboardScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Image and Details
             Row(
               children: [
                 ClipRRect(
@@ -214,8 +213,6 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-
-            // Rent Days or Colors
             if (rentDays != null)
               Row(
                 children: rentDays
@@ -255,10 +252,7 @@ class DashboardScreen extends StatelessWidget {
                 ))
                     .toList(),
               ),
-
             const SizedBox(height: 16),
-
-            // Price
             Text(
               price,
               style: const TextStyle(
