@@ -173,7 +173,7 @@ class DashboardScreen extends StatelessWidget {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 4,
-      shadowColor: Colors.grey[200],
+      shadowColor: Colors.grey[150],
       child: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -221,7 +221,7 @@ class DashboardScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       vertical: 6, horizontal: 12),
                   decoration: BoxDecoration(
-                    color: Colors.pink[50],
+                    color: Colors.pink[55],
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
