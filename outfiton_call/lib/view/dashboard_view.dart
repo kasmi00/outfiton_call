@@ -64,7 +64,7 @@ class DashboardScreen extends StatelessWidget {
 
               // Product List (Mock Data)
               _buildProductCard(
-                imageUrl: 'assets/lehenga.png',
+                imageUrl: 'assets/images/lehenga.png',
                 title: 'Lehenga',
                 description: 'This comes with jewellery & very comfortable.',
                 price: 'Rs. 4000',
@@ -72,7 +72,7 @@ class DashboardScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               _buildProductCard(
-                imageUrl: 'assets/vneck_top.png',
+                imageUrl: 'assets/images/vneck_top.png',
                 title: 'V neck top',
                 description: 'This is 100% cotton shirt & very comfortable.',
                 price: 'Rs. 1200',
@@ -80,7 +80,7 @@ class DashboardScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               _buildProductCard(
-                imageUrl: 'assets/zara_denim.png',
+                imageUrl: 'assets/images/zara_denim.png',
                 title: 'Zara Denim',
                 description: 'Size - 28, Length - 150cm',
                 price: 'Rs. 2000',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'registration_view.dart'; // Import RegisterScreen
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -57,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 const SizedBox(height: 8),
                 const Text(
-                  'Welcome back! please enter your details',
+                  'Welcome back! Please enter your details',
                   style: TextStyle(color: Colors.grey),
                 ),
                 const SizedBox(height: 30),
@@ -146,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ),
                     child: const Text(
-                      'Signup ',
+                      'Signup',
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 16,
