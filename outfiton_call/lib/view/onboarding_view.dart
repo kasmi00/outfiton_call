@@ -8,37 +8,37 @@ class OnboardingScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // Background Image with limited height
+      
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              height: MediaQuery.of(context).size.height * 0.5, // Limit background height to half screen
+              height: MediaQuery.of(context).size.height * 0.5,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/background_image.jpg'), // Replace with your image path
+                  image: AssetImage('assets/images/background_image.jpg'), 
                   fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
-          // Content Overlay
+         
           Positioned.fill(
             child: Column(
               children: [
                 const SizedBox(height: 80),
-                // Logo Section
+              
                 Column(
                   children: [
                     // Logo Image
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Image.asset(
-                        'assets/images/logo.png', // Replace with your logo path
+                        'assets/images/logo.png', 
                         height: 100,
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // Date Text Below Logo
+                   
                     const Text(
                       '30.11.2024',
                       style: TextStyle(

@@ -1,29 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:outfitoncall/view/dashboard_view.dart';
 import 'package:outfitoncall/view/login_view.dart';
 import 'package:outfitoncall/view/onboarding_view.dart';
 import 'package:outfitoncall/view/registration_view.dart';
-import 'package:outfitoncall/view/dashboard_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(outfitoncall());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class outfitoncall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Outfit On Call',
-      theme: ThemeData(primarySwatch: Colors.pink),
-      initialRoute: '/onboarding', // Set onboarding as the initial route
+      // Set Onboarding as the initial screen
+      initialRoute: '/onboarding', 
       routes: {
-        '/onboarding': (context) => OnboardingScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegistrationScreen(),
-        '/dashboard': (context) => const DashboardScreen(),
+        '/login': (context) => const LoginScreen(), // Login screen route
+        '/dashboard': (context) => const DashboardScreen(), // Dashboard route
+        '/register': (context) => const RegistrationView(), // Registration route
+        '/onboarding': (context) => const OnboardingScreen(), // Onboarding screen route
       },
+      debugShowCheckedModeBanner: false, 
     );
   }
 }
