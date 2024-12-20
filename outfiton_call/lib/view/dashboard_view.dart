@@ -171,6 +171,22 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 setState(() {
                   _currentIndex = index;
                   print(_currentIndex);
+
+
+                  switch (index) {
+                    case 0:
+                      Navigator.pushReplacementNamed(context, '/dashboard'); // Home
+                      break;
+                    case 1:
+                      Navigator.pushReplacementNamed(context, '/favorites'); // Favorites
+                      break;
+                    case 2:
+                      Navigator.pushReplacementNamed(context, '/rent'); // Rent
+                      break;
+                    case 3:
+                      Navigator.pushReplacementNamed(context, '/profile'); // Profile
+                      break;
+                  }
                 });
               },
               selectedItemColor: Colors.pink,

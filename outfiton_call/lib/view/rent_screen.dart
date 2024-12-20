@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class FavoritesScreen extends StatefulWidget {
-  const FavoritesScreen({super.key});
+class Rent extends StatefulWidget {
+  const Rent({super.key});
 
   @override
-  State<FavoritesScreen> createState() => _FavoritesScreenState();
+  State<Rent> createState() => _RentState();
 }
 
-class _FavoritesScreenState extends State<FavoritesScreen> {
+class _RentState extends State<Rent> {
   int _currentIndex = 0;
   bool _isHomeSelected = true;
   bool _isFavoritesSelected = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("this is favorites page")),
+      body: Center(child: Text("this is Rent page")),
       bottomNavigationBar: SizedBox(
         height: 140,
         child: BottomAppBar(

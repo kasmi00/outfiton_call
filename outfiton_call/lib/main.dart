@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:outfitoncall/view/dashboard_view.dart';
+import 'package:outfitoncall/view/favorites_screen.dart';
 import 'package:outfitoncall/view/login_view.dart';
 import 'package:outfitoncall/view/onboarding_view.dart';
 import 'package:outfitoncall/view/registration_view.dart';
+import 'package:outfitoncall/view/rent_screen.dart';
 
 void main() {
   runApp(const outfitoncall());
@@ -25,7 +27,13 @@ class outfitoncall extends StatelessWidget {
         '/register': (context) =>
             const RegistrationView(), // Registration route
         '/onboarding': (context) =>
-            const OnboardingScreen(), // Onboarding screen route
+            const OnboardingScreen(),
+        // Onboarding screen route
+        '/favorites': (context) =>
+        const FavoritesScreen(),
+        '/rent': (context) =>
+        const Rent(),
+
       },
       debugShowCheckedModeBanner: false,
     );
