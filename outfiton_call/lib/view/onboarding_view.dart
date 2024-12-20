@@ -54,10 +54,11 @@ class OnboardingScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      // Tagline
+
                       const Text(
                         'Re-Wearing Is Caring',
                         style: TextStyle(
+                          fontFamily: 'Montserrat Bold Italic',
                           fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,

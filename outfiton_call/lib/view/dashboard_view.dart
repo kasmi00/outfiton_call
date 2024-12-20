@@ -21,7 +21,6 @@ class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _DashboardScreenState createState() => _DashboardScreenState();
 }
 
@@ -85,13 +84,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 const SizedBox(height: 20),
 
                 // Category Selector
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    _buildCategoryIcon(Icons.checkroom, 'Apparel', 0),
-                    _buildCategoryIcon(Icons.shopping_bag, 'Shoe', 1),
-                    _buildCategoryIcon(Icons.brush, 'Beauty', 2),
-                  ],
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildCategoryIcon(Icons.checkroom, 'Apparel', 0),
+                      _buildCategoryIcon(Icons.shopping_bag, 'Shoe', 1),
+                      _buildCategoryIcon(Icons.brush, 'Beauty', 2),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
 
@@ -111,7 +112,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   price: 'Rs. 1200',
                   colors: [Colors.red, Colors.blue, Colors.yellow, Colors.pink],
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 10),
                 _buildProductCard(
                   imageUrl: 'assets/images/zara_denim.png',
                   title: 'Zara Denim',
@@ -177,23 +178,24 @@ class _DashboardScreenState extends State<DashboardScreen> {
       child: Column(
         children: [
           Container(
+            margin: const EdgeInsets.symmetric(horizontal: 8.0),
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               gradient: isSelected
                   ? LinearGradient(
-                      colors: [Colors.pink.shade200, Colors.pink],
-                    )
+                colors: [Colors.pink.shade200, Colors.pink],
+              )
                   : null,
               color: isSelected ? null : Colors.grey[200],
               shape: BoxShape.circle,
               boxShadow: isSelected
                   ? [
-                      BoxShadow(
-                        color: Colors.pink.shade100,
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
-                      )
-                    ]
+                BoxShadow(
+                  color: Colors.pink.shade100,
+                  blurRadius: 8,
+                  offset: const Offset(0, 4),
+                )
+              ]
                   : null,
             ),
             child: Icon(icon, color: isSelected ? Colors.white : Colors.grey),
@@ -266,45 +268,46 @@ class _DashboardScreenState extends State<DashboardScreen> {
               Row(
                 children: rentDays
                     .map((day) => Container(
-                          margin: const EdgeInsets.only(right: 8),
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 6, horizontal: 12),
-                          decoration: BoxDecoration(
-                            color: Colors.pink[55],
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Text(
-                            '$day days',
-                            style: const TextStyle(color: Colors.pink),
-                          ),
-                        ))
+                  margin: const EdgeInsets.only(right: 8),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 6, horizontal: 12),
+                  decoration: BoxDecoration(
+                    color: Colors.pink[55],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    '$day days',
+                    style: const TextStyle(color: Colors.pink),
+                  ),
+                ))
                     .toList(),
               )
             else if (colors != null)
               Row(
                 children: colors
                     .map((color) => Container(
-                          margin: const EdgeInsets.only(right: 8),
-                          width: 24,
-                          height: 24,
-                          decoration: BoxDecoration(
-                            color: color,
-                            shape: BoxShape.circle,
-                            boxShadow: const [
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 4,
-                                offset: Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                        ))
+                  margin: const EdgeInsets.only(right: 8),
+                  width: 24,
+                  height: 24,
+                  decoration: BoxDecoration(
+                    color: color,
+                    shape: BoxShape.circle,
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 4,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                ))
                     .toList(),
               ),
             const SizedBox(height: 16),
             Text(
               price,
               style: const TextStyle(
+
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
                 color: Colors.pink,
