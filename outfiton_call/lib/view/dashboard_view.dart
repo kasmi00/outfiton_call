@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() => runApp(const OutfitOnCall());
 
 class OutfitOnCall extends StatelessWidget {
-  const OutfitOnCall({Key? key}) : super(key: key);
+  const OutfitOnCall({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class OutfitOnCall extends StatelessWidget {
 }
 
 class DashboardScreen extends StatefulWidget {
-  const DashboardScreen({Key? key}) : super(key: key);
+  const DashboardScreen({super.key});
 
   @override
   _DashboardScreenState createState() => _DashboardScreenState();
@@ -28,6 +28,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
   final TextEditingController _searchController = TextEditingController();
   int selectedCategory = 0;
   int _currentIndex = 0;
+
+  // Screens for Bottom Navigation
+  final List<Widget> _screens = [
+    // HomeScreen(),
+    // FavoritesScreen(),
+    // RentScreen(),
+    // ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -60,6 +68,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 10.0),
           child: SingleChildScrollView(
+
             child: Column(
               children: [
                 // Search Bar
@@ -98,7 +107,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
 
                 // Product List (Mock Data)
                 _buildProductCard(
-                  imageUrl: 'assets/images/lehenga.png',
+                  imageUrl: 'assets/images/lehenga.jpg',
                   title: 'Lehenga',
                   description: 'This comes with jewellery & very comfortable.',
                   price: 'Rs. 4000',
@@ -106,7 +115,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 const SizedBox(height: 16),
                 _buildProductCard(
-                  imageUrl: 'assets/images/vneck_top.png',
+                  imageUrl: 'assets/images/vneck_top.jpg',
                   title: 'V neck top',
                   description: 'This is 100% cotton shirt & very comfortable.',
                   price: 'Rs. 1200',
@@ -114,54 +123,79 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
                 const SizedBox(height: 10),
                 _buildProductCard(
-                  imageUrl: 'assets/images/zara_denim.png',
-                  title: 'Zara Denim',
-                  description: 'Size - 28, Length - 150cm',
-                  price: 'Rs. 2000',
+                  imageUrl: 'assets/images/vneck_top.jpg',
+                  title: 'V neck top',
+                  description: 'This is 100% cotton shirt & very comfortable.',
+                  price: 'Rs. 1200',
+                  colors: [Colors.red, Colors.blue, Colors.yellow, Colors.pink],
                 ),
+                const SizedBox(height: 10),
+                _buildProductCard(
+                  imageUrl: 'assets/images/vneck_top.jpg',
+                  title: 'V neck top',
+                  description: 'This is 100% cotton shirt & very comfortable.',
+                  price: 'Rs. 1200',
+                  colors: [Colors.red, Colors.blue, Colors.yellow, Colors.pink],
+                ),
+                const SizedBox(height: 10),
+                _buildProductCard(
+                  imageUrl: 'assets/images/vneck_top.jpg',
+                  title: 'V neck top',
+                  description: 'This is 100% cotton shirt & very comfortable.',
+                  price: 'Rs. 1200',
+                  colors: [Colors.red, Colors.blue, Colors.yellow, Colors.pink],
+                ),
+                const SizedBox(height: 10),
+
               ],
             ),
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pink,
-        onPressed: () {},
-        child: const Icon(Icons.shopping_cart, color: Colors.white),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(
-        shape: const CircularNotchedRectangle(),
-        notchMargin: 8.0,
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-            // You can add navigation logic here based on selected index
-          },
-          selectedItemColor: Colors.pink,
-          unselectedItemColor: Colors.grey,
-          showUnselectedLabels: true,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.pink,
+      //   onPressed: () {},
+      //   child: const Icon(Icons.shopping_cart, color: Colors.white),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: SizedBox(
+        height: 140,
+        child: BottomAppBar(
+          shape: const CircularNotchedRectangle(),
+          notchMargin: 8.0,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 14.0),
+            child: BottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() {
+                  _currentIndex = index;
+                  print(_currentIndex);
+                });
+              },
+              selectedItemColor: Colors.pink,
+              unselectedItemColor: Colors.grey,
+              showUnselectedLabels: true,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Home',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.favorite),
+                  label: 'Favorites',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.checkroom),
+                  label: 'Rent',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle),
+                  label: 'Profile',
+                ),
+              ],
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Favorites',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.checkroom),
-              label: 'Rent',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.account_circle),
-              label: 'Profile',
-            ),
-          ],
+          ),
         ),
       ),
     );
@@ -183,19 +217,19 @@ class _DashboardScreenState extends State<DashboardScreen> {
             decoration: BoxDecoration(
               gradient: isSelected
                   ? LinearGradient(
-                colors: [Colors.pink.shade200, Colors.pink],
-              )
+                      colors: [Colors.pink.shade200, Colors.pink],
+                    )
                   : null,
               color: isSelected ? null : Colors.grey[200],
               shape: BoxShape.circle,
               boxShadow: isSelected
                   ? [
-                BoxShadow(
-                  color: Colors.pink.shade100,
-                  blurRadius: 8,
-                  offset: const Offset(0, 4),
-                )
-              ]
+                      BoxShadow(
+                        color: Colors.pink.shade100,
+                        blurRadius: 8,
+                        offset: const Offset(0, 4),
+                      )
+                    ]
                   : null,
             ),
             child: Icon(icon, color: isSelected ? Colors.white : Colors.grey),
@@ -225,95 +259,95 @@ class _DashboardScreenState extends State<DashboardScreen> {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       elevation: 4,
       shadowColor: Colors.grey[150],
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8),
-                  child: Image.asset(
-                    imageUrl,
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        title,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Text(
-                        description,
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            if (rentDays != null)
+      child: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               Row(
-                children: rentDays
-                    .map((day) => Container(
-                  margin: const EdgeInsets.only(right: 8),
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 6, horizontal: 12),
-                  decoration: BoxDecoration(
-                    color: Colors.pink[55],
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
                     borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      imageUrl,
+                      width: 80,
+                      height: 80,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  child: Text(
-                    '$day days',
-                    style: const TextStyle(color: Colors.pink),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          description,
+                          style: const TextStyle(color: Colors.grey),
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
-                ))
-                    .toList(),
-              )
-            else if (colors != null)
-              Row(
-                children: colors
-                    .map((color) => Container(
-                  margin: const EdgeInsets.only(right: 8),
-                  width: 24,
-                  height: 24,
-                  decoration: BoxDecoration(
-                    color: color,
-                    shape: BoxShape.circle,
-                    boxShadow: const [
-                      BoxShadow(
-                        color: Colors.black12,
-                        blurRadius: 4,
-                        offset: Offset(0, 2),
+                ],
+              ),
+              const SizedBox(height: 16),
+              if (rentDays != null)
+                Wrap(
+                  spacing: 8,
+                  children: rentDays.map((day) {
+                    return Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 6, horizontal: 12),
+                      decoration: BoxDecoration(
+                        color: Colors.pink[50],
+                        borderRadius: BorderRadius.circular(8),
                       ),
-                    ],
-                  ),
-                ))
-                    .toList(),
+                      child: Text(
+                        '$day days',
+                        style: const TextStyle(color: Colors.pink),
+                      ),
+                    );
+                  }).toList(),
+                )
+              else if (colors != null)
+                Wrap(
+                  spacing: 8,
+                  children: colors.map((color) {
+                    return Container(
+                      width: 24,
+                      height: 24,
+                      decoration: BoxDecoration(
+                        color: color,
+                        shape: BoxShape.circle,
+                      ),
+                    );
+                  }).toList(),
+                ),
+              const SizedBox(height: 16),
+              Text(
+                price,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.pink,
+                ),
               ),
-            const SizedBox(height: 16),
-            Text(
-              price,
-              style: const TextStyle(
-
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.pink,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
