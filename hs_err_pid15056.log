@@ -1,0 +1,44 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ff87b9c92b3, pid=15056, tid=19708
+#
+# JRE version: OpenJDK Runtime Environment Temurin-17.0.13+11 (17.0.13+11) (build 17.0.13+11)
+# Java VM: OpenJDK 64-Bit Server VM Temurin-17.0.13+11 (17.0.13+11, mixed mode, tiered, compressed oops, compressed class ptrs, parallel gc, windows-amd64)
+# Problematic frame:
+# V  [jvm.dll+0x3892b3]
+#
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   https://github.com/adoptium/adoptium-support/issues
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: --add-modules=ALL-SYSTEM --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/sun.nio.fs=ALL-UNNAMED -Declipse.application=org.eclipse.jdt.ls.core.id1 -Dosgi.bundles.defaultStartLevel=4 -Declipse.product=org.eclipse.jdt.ls.core.product -Djava.import.generatesMetadataFilesAtProjectRoot=false -DDetectVMInstallationsJob.disabled=true -Dfile.encoding=utf8 -XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -Xlog:disable -javaagent:c:\Users\user\.vscode\extensions\redhat.java-1.38.0-win32-x64\lombok\lombok-1.18.34.jar c:\Users\user\.vscode\extensions\redhat.java-1.38.0-win32-x64\server\plugins\org.eclipse.equinox.launcher_1.6.900.v20240613-2009.jar -configuration c:\Users\user\AppData\Roaming\Code\User\globalStorage\redhat.java\1.38.0\config_ss_win -data c:\Users\user\AppData\Roaming\Code\User\workspaceStorage\0307098c942be022023389af500fe1a9\redhat.java\ss_ws --pipe=\\.\pipe\lsp-8f35ff7fdd09165620bcd937d23fbf5b-sock
+
+Host: 11th Gen Intel(R) Core(TM) i5-11320H @ 3.20GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 22621 (10.0.22621.4391)
+Time: Fri Dec 20 13:32:19 2024 Nepal Standard Time elapsed time: 3.339280 seconds (0d 0h 0m 3s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001df17a53630):  JavaThread "Worker-0" [_thread_in_vm, id=19708, stack(0x000000893d800000,0x000000893d900000)]
+
+Stack: [0x000000893d800000,0x000000893d900000],  sp=0x000000893d8f9d50,  free space=999k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x3892b3]
+V  [jvm.dll+0x682932]
+V  [jvm.dll+0x389eeb]
+V  [jvm.dll+0x38a0b8]
+V  [jvm.dll+0x7b25e6]
+V  [jvm.dll+0x7b3859]
+V  [jvm.dll+0x7b3bb8]
+V  [jvm.dll+0x823c8b]
+V  [jvm.dll+0x82381f]
+V  [jvm.dll+0x8255c7]
+V  [jvm.dll+0x828fba]
+V  [jvm.dll+0x82d85a]
+V  [jvm.dll+0x826d2b]
+V  [jvm.dll+0x37236a]
+V  [jvm.dll+0x411c5f]
