@@ -29,8 +29,8 @@ class LoginView extends StatelessWidget {
                     // Enlarged Logo at the top
                     Image.asset(
                       'assets/images/logo.png',
-                      height: 200, // Increased size
-                      width: 200, // Increased size
+                      height: 300, // Increased size
+                      width: 300, // Increased size
                     ),
                     const SizedBox(height: 20),
                     const Text(
