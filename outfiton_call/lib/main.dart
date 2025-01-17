@@ -1,41 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:outfitoncall/view/dashboard_view.dart';
-import 'package:outfitoncall/view/favorites_screen.dart';
-import 'package:outfitoncall/view/login_view.dart';
-import 'package:outfitoncall/view/onboarding_view.dart';
-import 'package:outfitoncall/view/registration_view.dart';
-import 'package:outfitoncall/view/rent_screen.dart';
+import 'package:outfitoncall/app/app.dart';
+import 'package:outfitoncall/app/di/di.dart';
+import 'package:outfitoncall/core/network/hive_service.dart';
 
-void main() {
-  runApp(const outfitoncall());
-}
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // Initialize Hive Database
+  await HiveService.init();
 
-class outfitoncall extends StatelessWidget {
-  const outfitoncall({super.key});
+  // Initialize Dependencies
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/onboarding',
-      theme: ThemeData(
-          primarySwatch: Colors.brown,
-          scaffoldBackgroundColor: Colors.pink.shade100,
-          fontFamily: 'Montserrat  Italic'),
-      routes: {
-        '/login': (context) => const LoginScreen(), // Login screen route
-        '/dashboard': (context) => const DashboardScreen(), // Dashboard route
-        '/register': (context) =>
-            const RegistrationView(), // Registration route
-        '/onboarding': (context) =>
-            const OnboardingScreen(),
-        // Onboarding screen route
-        '/favorites': (context) =>
-        const FavoritesScreen(),
-        '/rent': (context) =>
-        const Rent(),
+  // await HiveService().clearStudentBox();
 
-      },
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  await initDependencies();
+
+  runApp(
+    App(),
+  );
 }
