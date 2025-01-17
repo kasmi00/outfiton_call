@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:outfitoncall/core/common/snackbar/my_snackbar.dart';
 import 'package:outfitoncall/features/auth/presentation/view/dashboard_view.dart';
 import 'package:outfitoncall/features/auth/presentation/view/registartion_view.dart';
 import 'package:outfitoncall/features/auth/presentation/view_model/login/login_bloc.dart';
-
-import '../../../../core/common/snackbar/my_snackbar.dart';
-
 
 class LoginView extends StatelessWidget {
   LoginView({super.key});
@@ -71,11 +69,11 @@ class LoginView extends StatelessWidget {
                           if (_usernameController.text == 'kasmi' &&
                               _passwordController.text == 'kasmi123') {
                             context.read<LoginBloc>().add(
-                              NavigateHomeScreenEvent(
-                                destination: DashboardScreen(),
-                                context: context,
-                              ),
-                            );
+                                  NavigateHomeScreenEvent(
+                                    destination: DashboardScreen(),
+                                    context: context,
+                                  ),
+                                );
                           } else {
                             showMySnackBar(
                               context: context,
@@ -103,11 +101,11 @@ class LoginView extends StatelessWidget {
                       key: const ValueKey('registerButton'),
                       onPressed: () {
                         context.read<LoginBloc>().add(
-                          NavigateRegisterScreenEvent(
-                            destination: RegistrationView(),
-                            context: context,
-                          ),
-                        );
+                              NavigateRegisterScreenEvent(
+                                destination: RegistrationView(),
+                                context: context,
+                              ),
+                            );
                       },
                       child: const SizedBox(
                         height: 50,
