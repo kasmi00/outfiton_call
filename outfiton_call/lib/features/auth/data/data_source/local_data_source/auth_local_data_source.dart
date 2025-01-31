@@ -16,6 +16,7 @@ class AuthLocalDataSource implements IAuthDataSource {
     return Future.value(AuthEntity(
       userId: "1",
       email: "",
+      image: "",
       password: "",
     ));
   }
